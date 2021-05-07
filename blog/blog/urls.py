@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from webapp.views import FacebookLogin
+from webapp.views import FacebookLogin, GoogleLogin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dj_rest_auth/', include('dj_rest_auth.urls')),
     path('dj_rest_auth/registration/', include('dj_rest_auth.registration.urls')),
-    path('dj-rest-auth/facebook/', FacebookLogin.as_view(), name='fb_login')
+    path('dj-rest_auth/facebook/', FacebookLogin.as_view(), name='fb_login'),
+    path('dj_rest_auth/google', GoogleLogin.as_view(), name='google_login')
 ]
