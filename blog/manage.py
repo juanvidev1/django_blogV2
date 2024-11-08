@@ -3,10 +3,20 @@
 import os
 import sys
 
+# Agrega el directorio superior al sistema de rutas
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from loader import load_encrypted_app
+
+APP_PATH = "blog"
+
 
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings')
+
+    # Load encrypted app
+    load_encrypted_app(APP_PATH)
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

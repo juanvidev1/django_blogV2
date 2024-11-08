@@ -17,7 +17,7 @@ def get_encryption_key():
 encryption_key = get_encryption_key()
 cipher_suite = Fernet(encryption_key.encode())
 
-ENCRYPTED_APP_PATH = "mi_django_app"  # Ruta de la app encriptada
+ENCRYPTED_APP_PATH = "blog"  # Ruta de la app encriptada
 
 def load_and_exec_encrypted_module(file_path):
     """Desencripta y ejecuta un módulo encriptado."""
